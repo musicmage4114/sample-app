@@ -16,7 +16,6 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", signup_path
     log_in_as(@user)
     get root_path
-    assert_select "a[href=?]", signup_path, count: 1
     assert_select "a[href=?]", user_path(@user)
     assert_select "a[href=?]", users_path
     assert_select "a[href=?]", edit_user_path(@user)
